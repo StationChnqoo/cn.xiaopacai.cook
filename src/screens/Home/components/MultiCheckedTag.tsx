@@ -38,7 +38,7 @@ const MultiCheckedTag: React.FC<MyProps> = props => {
           ]}
         />
       ) : null}
-      <Text style={[{color: checked ? color : '#999', fontSize: 13}]}>
+      <Text style={[{color: checked ? color : '#999', fontSize: 14}]}>
         {`${tag?.emoji || ''} ${tag.label || tag.name}`}
       </Text>
     </TouchableOpacity>
@@ -48,7 +48,7 @@ const MultiCheckedTag: React.FC<MyProps> = props => {
 const styles = StyleSheet.create({
   tag: {
     paddingHorizontal: 6,
-    paddingVertical: 2,
+    paddingVertical: 3,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,

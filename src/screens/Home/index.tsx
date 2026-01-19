@@ -53,11 +53,15 @@ const Home: React.FC<MyProps> = ({navigation}) => {
   return (
     <View style={styles.view}>
       <View style={{height: insets.top, backgroundColor: '#fff'}} />
-      <ScrollView style={{flex: 1}}>
+      <ScrollView
+        style={{flex: 1}}
+        bounces={false}
+        showsVerticalScrollIndicator={false}>
         <View style={styles.group}>
           <Text style={styles.title}>🥘 选一下食材</Text>
-          <View style={{height: 5}} />
+          <View style={{height: 10}} />
           <Text style={styles.subTitle}>🥬 菜菜们</Text>
+          <View style={{height: 5}} />
           <View style={styles.tags}>
             {VegetableOptions.map((it, index) => (
               <MultiCheckedTag
@@ -72,7 +76,7 @@ const Home: React.FC<MyProps> = ({navigation}) => {
               />
             ))}
           </View>
-          <View style={{height: 12}} />
+          <View style={{height: 20}} />
           <Text style={styles.subTitle}>🥩 肉肉们</Text>
           <View style={styles.tags}>
             {MeatOptions.map((it, index) => (
@@ -88,10 +92,11 @@ const Home: React.FC<MyProps> = ({navigation}) => {
               />
             ))}
           </View>
-          <View style={{height: 12}} />
+          <View style={{height: 20}} />
           <Text style={styles.subTitle}>
             🍚 主食也要一起下锅吗？（不选也行）
           </Text>
+          <View style={{height: 5}} />
           <View style={styles.tags}>
             {StapleOptions.map((it, index) => (
               <MultiCheckedTag
@@ -107,10 +112,10 @@ const Home: React.FC<MyProps> = ({navigation}) => {
             ))}
           </View>
         </View>
-        <View style={{height: 5}} />
+        <View style={{height: 10}} />
         <View style={styles.group}>
           <Text style={styles.title}>🍳 选一下厨具</Text>
-          <View style={{height: 5}} />
+          <View style={{height: 10}} />
           <View style={styles.tags}>
             {ToolOptions.map((it, index) => (
               <SingleCheckedTag
@@ -126,7 +131,7 @@ const Home: React.FC<MyProps> = ({navigation}) => {
             ))}
           </View>
         </View>
-        <View style={{height: 5}} />
+        <View style={{height: 10}} />
         <View style={styles.group}>
           <Text style={styles.title}>🍲 来看看组合出的菜谱吧</Text>
           <View style={{height: 5}} />
@@ -188,7 +193,7 @@ const styles = StyleSheet.create({
   tags: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
+    gap: 10,
   },
 });
 

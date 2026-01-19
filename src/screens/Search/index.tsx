@@ -35,7 +35,7 @@ const Search: React.FC<MyProps> = props => {
         </Text>
         <View style={{height: 5}} />
         <Text style={{fontSize: 14, color: '#999'}}>
-        约{receipts.length}道菜
+          约{receipts.length}道菜
         </Text>
         <View style={{height: 5}} />
         <Flex horizontal>
@@ -52,6 +52,8 @@ const Search: React.FC<MyProps> = props => {
         data={receipts}
         extraData={collections}
         initialNumToRender={10}
+        bounces={false}
+        keyExtractor={(item, index) => `${item?.name}-${index}`}
         renderItem={info => (
           <CommonItem
             item={info.item}
