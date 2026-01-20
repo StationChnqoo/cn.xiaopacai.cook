@@ -8,7 +8,6 @@ import {
 import {useCook} from '@src/hooks/useCook';
 import {useCaches} from '@src/stores';
 import _ from 'lodash';
-import {useMemo} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {RootStacksProp} from '..';
@@ -41,14 +40,12 @@ const Home: React.FC<MyProps> = ({navigation}) => {
     navigation.navigate('CombineResult');
   };
 
-  const modeTips = useMemo(() => {
-    let tips = {
-      [0]: '展示所有含当前选中任意食材的菜谱',
-      [1]: '展示所有含当前选中所有食材的菜谱',
-      [2]: '展示当前选中食材即可制作的所有菜谱',
-    };
-    return tips?.[options.mode] || '请选择模式';
-  }, [options.mode]);
+  let tips = {
+    [0]: '展示所有含当前选中任意食材的菜谱',
+    [1]: '展示所有含当前选中所有食材的菜谱',
+    [2]: '展示当前选中食材即可制作的所有菜谱',
+  };
+  const modeTips = tips?.[options.mode] || '请选择模式';
 
   return (
     <View style={styles.view}>

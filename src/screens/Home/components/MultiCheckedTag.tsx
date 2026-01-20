@@ -1,6 +1,5 @@
 import {Option} from '@src/constants/t';
 import {useCaches} from '@src/stores';
-import {useMemo} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 interface MyProps {
@@ -15,9 +14,7 @@ const MultiCheckedTag: React.FC<MyProps> = props => {
   const {tag, color, backgroundColor, onPress, optionsKey} = props;
   const {theme, options} = useCaches();
 
-  const checked = useMemo(() => {
-    return options[optionsKey].includes(tag.name);
-  }, [tag, optionsKey, options]);
+  const checked = options[optionsKey].includes(tag.name);
 
   return (
     <TouchableOpacity

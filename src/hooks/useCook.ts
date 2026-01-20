@@ -11,16 +11,13 @@ export const useCook = () => {
 
   // 基本条件过滤
   const filterBaseReceipts = useMemo(() => {
-    let filterTools = datas.filter(it => it.tools == options.tools);
-    let filterStaples =
-      options.staple.length == 0
-        ? filterTools
-        : filterTools.filter(it => {
-            let staples = options.staple;
-            return staples.some(s => it.stuff.includes(s));
-          });
-    return filterStaples;
-  }, [options]);
+    return datas
+      .filter(it => it.tools === options.tools)
+      .filter(it => {
+        if (options.staple.length === 0) return true;
+        return options.staple.some(s => it.stuff.includes(s));
+      });
+  }, [datas, options.tools, options.staple]);
 
   const filterCooksWithLoose = () => {
     // 模糊匹配

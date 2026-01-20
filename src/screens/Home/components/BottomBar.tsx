@@ -1,7 +1,6 @@
 import {useCook} from '@src/hooks/useCook';
 import {useCaches} from '@src/stores';
-import {useMemo} from 'react';
-import {Alert, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 interface MyProps {
   onClear: () => void;

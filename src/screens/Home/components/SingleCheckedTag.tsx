@@ -1,6 +1,5 @@
 import {Option} from '@src/constants/t';
 import {useCaches} from '@src/stores';
-import {useMemo} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 interface MyProps {
