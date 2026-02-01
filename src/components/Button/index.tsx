@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ViewStyle,
 } from 'react-native';
+import { fs } from '@src/constants/u';
 
 interface MyProps {
   title: String;
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 14,
+    fontSize: fs(14),
   },
 });
 

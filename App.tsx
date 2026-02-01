@@ -15,6 +15,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { fs } from '@src/constants/u';
 
 import {
   Colors,
@@ -115,12 +116,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
   },
   sectionTitle: {
-    fontSize: 24,
+    fontSize: fs(24),
     fontWeight: '600',
   },
   sectionDescription: {
     marginTop: 8,
-    fontSize: 18,
+    fontSize: fs(18),
     fontWeight: '400',
   },
   highlight: {

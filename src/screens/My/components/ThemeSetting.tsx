@@ -1,6 +1,7 @@
 import {TinyMenuIds, TinyMenus} from '@src/assets/datas/menus';
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -15,7 +16,7 @@ const ThemeSetting: React.FC<MyProps> = props => {
   ];
   return (
     <View style={styles.group}>
-      <Text style={{fontSize: 16, color: '#333', fontWeight: '500'}}>
+      <Text style={{fontSize: fs(16), color: '#333', fontWeight: '500'}}>
         主题设置
       </Text>
       <Flex justify="space-between" horizontal style={{gap: 10}}>
@@ -41,7 +42,7 @@ const ThemeSetting: React.FC<MyProps> = props => {
                 <Text
                   style={{
                     color: item.value,
-                    fontSize: 14,
+                    fontSize: fs(14),
                   }}>
                   {item.label}
                 </Text>

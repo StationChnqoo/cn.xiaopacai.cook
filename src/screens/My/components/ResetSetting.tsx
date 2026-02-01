@@ -1,6 +1,7 @@
 import {TinyMenuIds, TinyMenus} from '@src/assets/datas/menus';
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import {useState} from 'react';
 import {
   Alert,
@@ -18,7 +19,7 @@ const ResetSetting: React.FC<MyProps> = props => {
 
   return (
     <View style={styles.group}>
-      <Text style={{fontSize: 16, color: '#333', fontWeight: '500'}}>
+      <Text style={{fontSize: fs(16), color: '#333', fontWeight: '500'}}>
         重置所有设置
       </Text>
       <TouchableOpacity
@@ -41,7 +42,7 @@ const ResetSetting: React.FC<MyProps> = props => {
             },
           ]);
         }}>
-        <Text style={{color: theme, fontSize: 14}}>重置</Text>
+        <Text style={{color: theme, fontSize: fs(14)}}>重置</Text>
       </TouchableOpacity>
     </View>
   );

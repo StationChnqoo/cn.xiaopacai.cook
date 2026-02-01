@@ -1,4 +1,4 @@
-import { hex2Rgba } from '@src/constants/u';
+import { hex2Rgba, fs } from '@src/constants/u';
 import React from 'react';
 import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
 import Modal from 'react-native-modal';
@@ -15,7 +15,7 @@ const Spinner: React.FC<MyProps> = props => {
     <Modal style={styles.view} isVisible={visible}>
       <ActivityIndicator size={'large'} color={'#fff'} />
       <View style={{height: 32}} />
-      <Text style={{color: '#fff', fontSize: 14}}>{text}</Text>
+      <Text style={{color: '#fff', fontSize: fs(14)}}>{text}</Text>
     </Modal>
   );
 };
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     backgroundColor: hex2Rgba('#666666', 0.1),
   },
   text: {
-    fontSize: 14,
+    fontSize: fs(14),
   },
 });
 

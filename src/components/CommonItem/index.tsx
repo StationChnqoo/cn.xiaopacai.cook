@@ -1,6 +1,7 @@
 import {Receipt} from '@src/constants/t';
 import {useEmoji} from '@src/hooks/useEmoji';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import _ from 'lodash';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
@@ -25,11 +26,11 @@ const CommonItem: React.FC<MyProps> = props => {
   return (
     <TouchableOpacity style={styles.item} activeOpacity={0.8} onPress={onPress}>
       <View style={{flex: 1}}>
-        <Text style={{color: '#333', fontSize: 14, fontWeight: '500'}}>
+        <Text style={{color: '#333', fontSize: fs(14), fontWeight: '500'}}>
           {item.name}
         </Text>
         <View style={{height: 5}} />
-        <Text style={{color: '#333', fontSize: 14}} numberOfLines={1}>
+        <Text style={{color: '#333', fontSize: fs(14)}} numberOfLines={1}>
           {emoji}
         </Text>
       </View>
@@ -65,7 +66,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   item: {
-    paddingVertical: 8,
+    paddingVertical: 10,
     paddingHorizontal: 15,
     backgroundColor: '#fff',
     flexDirection: 'row',

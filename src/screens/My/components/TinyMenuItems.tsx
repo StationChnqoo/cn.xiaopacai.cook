@@ -1,6 +1,7 @@
 import {TinyMenuIds, TinyMenus} from '@src/assets/datas/menus';
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -29,7 +30,7 @@ const TinyMenuItems: React.FC<MyProps> = props => {
               style={{height: 32, width: 32, tintColor: theme}}
             />
             <View style={{height: 5}} />
-            <Text style={{color: '#666', fontSize: 12}}>{item.label}</Text>
+            <Text style={{color: '#666', fontSize: fs(12)}}>{item.label}</Text>
           </TouchableOpacity>
         );
       })}

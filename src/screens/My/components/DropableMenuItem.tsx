@@ -1,5 +1,6 @@
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -15,7 +16,7 @@ const DropableMenuItem: React.FC<MyProps> = props => {
   return (
     <View style={styles.group}>
       <Flex justify="space-between" horizontal>
-        <Text style={{fontSize: 16, color: '#333', fontWeight: '500'}}>
+        <Text style={{fontSize: fs(16), color: '#333', fontWeight: '500'}}>
           {item.title}
         </Text>
         <TouchableOpacity
@@ -36,7 +37,7 @@ const DropableMenuItem: React.FC<MyProps> = props => {
         </TouchableOpacity>
       </Flex>
       {more ? (
-        <Text style={{marginTop: 5, fontSize: 14, color: '#666'}}>
+        <Text style={{marginTop: 5, fontSize: fs(14), color: '#666'}}>
           {item.content}
         </Text>
       ) : null}

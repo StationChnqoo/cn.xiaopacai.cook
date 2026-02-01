@@ -1,5 +1,6 @@
 import {useCaches} from '@src/stores';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { fs } from '@src/constants/u';
 
 interface MyProps {
   index: number;
@@ -25,9 +26,9 @@ const Tabs: React.FC<MyProps> = props => {
             <Text
               style={
                 checked
-                  ? {fontSize: 16, color: theme, fontWeight: '500'}
+                  ? {fontSize: fs(16), color: theme, fontWeight: '500'}
                   : {
-                      fontSize: 16,
+                      fontSize: fs(16),
                       color: '#999',
                     }
               }>

@@ -4,6 +4,7 @@ import CommonItem from '@src/components/CommonItem';
 import Flex from '@src/components/Flex';
 import {useBilibiliLink} from '@src/hooks/useLink';
 import {useCaches} from '@src/stores';
+import { fs } from '@src/constants/u';
 import _ from 'lodash';
 import {useMemo, useState} from 'react';
 import {FlatList, StyleSheet, Text, TextInput, View} from 'react-native';
@@ -30,11 +31,11 @@ const Search: React.FC<MyProps> = props => {
     <View style={styles.view}>
       <View style={{height: insets.top, backgroundColor: '#fff'}} />
       <View style={styles.group}>
-        <Text style={{fontSize: 16, fontWeight: '500', color: '#333'}}>
+        <Text style={{fontSize: fs(16), fontWeight: '500', color: '#333'}}>
           搜索
         </Text>
         <View style={{height: 5}} />
-        <Text style={{fontSize: 14, color: '#999'}}>
+        <Text style={{fontSize: fs(14), color: '#999'}}>
         约{receipts.length}道菜
         </Text>
         <View style={{height: 5}} />
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
     height: 32,
     padding: 0,
     flex: 1,
-    fontSize: 16,
+    fontSize: fs(16),
     color: '#333',
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,

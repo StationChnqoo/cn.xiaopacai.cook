@@ -5,6 +5,7 @@ import {
   StyleProp,
   StyleSheet,
 } from 'react-native';
+import { fs } from '@src/constants/u';
 
 interface MyProps {
   checked: boolean;
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
-    fontSize: 14,
+    fontSize: fs(14),
   },
 });
 

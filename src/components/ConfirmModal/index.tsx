@@ -2,6 +2,7 @@
 import {useCaches} from '@src/stores';
 import {useState} from 'react';
 import {StyleSheet, Text, TextInput, View} from 'react-native';
+import { fs } from '@src/constants/u';
 import Button from '../Button';
 import BottomSheet from '../BottomSheet';
 import Flex from '../Flex';
@@ -31,12 +32,12 @@ const ConfirmModal = (props: MyProps) => {
         style={{
           ...styles.views,
         }}>
-        <Text style={{color: '#333', fontWeight: '500', fontSize: 16}}>
+        <Text style={{color: '#333', fontWeight: '500', fontSize: fs(16)}}>
           防误操作弹窗
         </Text>
         <View style={{height: 12}} />
         <Text
-          style={{fontSize: 14, color: '#666'}}>{`请输入口令 -> ${code}`}</Text>
+          style={{fontSize: fs(14), color: '#666'}}>{`请输入口令 -> ${code}`}</Text>
         <View style={{height: 12}} />
         <TextInput
           style={styles.input}
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     height: 36,
     paddingVertical: 0,
     paddingHorizontal: 5,
-    fontSize: 16,
+    fontSize: fs(16),
   },
   tag: {
     borderRadius: 5,

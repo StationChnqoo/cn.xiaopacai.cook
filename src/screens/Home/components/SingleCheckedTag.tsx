@@ -1,4 +1,5 @@
 import {Option} from '@src/constants/t';
+import {fs} from '@src/constants/u';
 import {useCaches} from '@src/stores';
 import {useMemo} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity} from 'react-native';
@@ -29,12 +30,12 @@ const SingleCheckedTag: React.FC<MyProps> = props => {
         <Image
           source={tag.icon}
           style={[
-            {width: 16, height: 16, marginRight: 5},
+            {width: fs(16), height: fs(16), marginRight: fs(5)},
             {tintColor: checked ? color : '#666'},
           ]}
         />
       ) : null}
-      <Text style={[{color: checked ? color : '#999', fontSize: 13}]}>
+      <Text style={[{color: checked ? color : '#999', fontSize: fs(13)}]}>
         {`${tag.label || tag.name}`}
       </Text>
     </TouchableOpacity>

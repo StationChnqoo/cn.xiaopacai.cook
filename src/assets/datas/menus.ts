@@ -30,11 +30,11 @@ export enum TinyMenuIds {
 }
 
 export const TinyMenus = [
-  {
-    value: TinyMenuIds.RestoreBuy,
-    label: '恢复购买',
-    src: require('@src/assets/images/my/vip.png'),
-  },
+  // {
+  //   value: TinyMenuIds.RestoreBuy,
+  //   label: '恢复购买',
+  //   src: require('@src/assets/images/my/vip.png'),
+  // },
   {
     value: TinyMenuIds.Upgrade,
     label: '在线升级',

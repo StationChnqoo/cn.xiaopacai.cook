@@ -1,5 +1,6 @@
 import {RootStacksProp} from '@src/screens';
 import React from 'react';
+import { fs } from '@src/constants/u';
 import {
   Image,
   Platform,
@@ -69,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 16,
+    fontSize: fs(16),
     color: '#333',
     fontWeight: '500',
     marginHorizontal: 16,

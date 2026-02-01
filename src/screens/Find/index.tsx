@@ -1,6 +1,7 @@
 import Datas from '@src/assets/datas/receipts';
 import Flex from '@src/components/Flex';
 import {Receipt} from '@src/constants/t';
+import { fs } from '@src/constants/u';
 import {useEmoji} from '@src/hooks/useEmoji';
 import {useBilibiliLink} from '@src/hooks/useLink';
 import {useCaches} from '@src/stores';
@@ -78,7 +79,7 @@ const Find: React.FC<MyProps> = ({navigation}) => {
           });
         }}>
         <Text
-          style={{color: theme, fontSize: 12}}>{`${emoji} ${item.name}`}</Text>
+          style={{color: theme, fontSize: fs(12)}}>{`${emoji} ${item.name}`}</Text>
       </TouchableOpacity>
     );
   };
@@ -88,10 +89,10 @@ const Find: React.FC<MyProps> = ({navigation}) => {
       <View style={{height: insets.top, backgroundColor: '#fff'}} />
       <ScrollView style={{flex: 1}}>
         <View style={styles.group}>
-          <Text style={{fontSize: 16, fontWeight: '500', color: '#333'}}>
+          <Text style={{fontSize: fs(16), fontWeight: '500', color: '#333'}}>
             今天吃什么？
           </Text>
-          <View style={{height: 5}} />
+          <View style={{height: 10}} />
           <Flex horizontal justify="space-between">
             <Flex horizontal>
               <TouchableOpacity
@@ -100,7 +101,7 @@ const Find: React.FC<MyProps> = ({navigation}) => {
                 onPress={() => {
                   onStep(-1);
                 }}>
-                <Text style={{color: '#fff', fontSize: 14}}>-</Text>
+                <Text style={{color: '#fff', fontSize: fs(14)}}>-</Text>
               </TouchableOpacity>
               <Text style={styles.count}>{count}</Text>
               <TouchableOpacity
@@ -109,7 +110,7 @@ const Find: React.FC<MyProps> = ({navigation}) => {
                 onPress={() => {
                   onStep(1);
                 }}>
-                <Text style={{color: '#fff', fontSize: 14}}>+</Text>
+                <Text style={{color: '#fff', fontSize: fs(14)}}>+</Text>
               </TouchableOpacity>
             </Flex>
             <TouchableOpacity
@@ -118,24 +119,24 @@ const Find: React.FC<MyProps> = ({navigation}) => {
               onPress={() => {
                 setRefreshing(Math.random());
               }}>
-              <Text style={{color: '#fff', fontSize: 14}}>刷新</Text>
+              <Text style={{color: '#fff', fontSize: fs(14)}}>刷新</Text>
             </TouchableOpacity>
           </Flex>
           <View style={{height: 10}} />
           <View style={styles.tags}>{datas.map(renderItem)}</View>
         </View>
-        <View style={{height: 5}} />
+        <View style={{height: 10}} />
         <View style={styles.group}>
           <Flex horizontal justify="space-between">
-            <Text style={{fontSize: 16, fontWeight: '500', color: '#333'}}>
+            <Text style={{fontSize: fs(16), fontWeight: '500', color: '#333'}}>
               收藏
             </Text>
             <TouchableOpacity activeOpacity={0.8} onPress={onClear}>
-              <Text style={{color: '#ff5252', fontSize: 14}}>清除</Text>
+              <Text style={{color: '#ff5252', fontSize: fs(14)}}>清除</Text>
             </TouchableOpacity>
           </Flex>
           <View style={{height: 5}} />
-          <Text style={{fontSize: 14, color: '#999'}}>
+          <Text style={{fontSize: fs(14), color: '#999'}}>
             一共收藏了{collections.length}道菜
           </Text>
           {collections.length > 0 ? (
@@ -177,7 +178,7 @@ const styles = StyleSheet.create({
   },
   count: {
     width: 36,
-    fontSize: 16,
+    fontSize: fs(16),
     color: '#333',
     textAlign: 'center',
   },

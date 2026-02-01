@@ -1,3 +1,4 @@
+import { fs } from '@src/constants/u';
 import {useCook} from '@src/hooks/useCook';
 import {useCaches} from '@src/stores';
 import {useMemo} from 'react';
@@ -16,16 +17,16 @@ const BottomBar: React.FC<MyProps> = props => {
   return (
     <View style={styles.view}>
       <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
-        <Text style={{color: '#333', fontSize: 14}}>预计能做</Text>
+        <Text style={{color: '#333', fontSize: fs(14)}}>预计能做</Text>
         <Text style={[styles.count, {color: theme}]}>{receipts.length}</Text>
-        <Text style={{color: '#333', fontSize: 14}}>道菜</Text>
+        <Text style={{color: '#333', fontSize: fs(14)}}>道菜</Text>
       </View>
       <View style={styles.buttons}>
         <TouchableOpacity
           activeOpacity={0.8}
           onPress={onClear}
           style={[styles.button, styles.border]}>
-          <Text style={{color: theme, fontSize: 14}}>清除</Text>
+          <Text style={{color: theme, fontSize: fs(14)}}>清除</Text>
         </TouchableOpacity>
         <TouchableOpacity
           disabled={receipts.length == 0}
@@ -36,7 +37,7 @@ const BottomBar: React.FC<MyProps> = props => {
             styles.fill,
             {backgroundColor: theme, opacity: receipts.length == 0 ? 0.75 : 1},
           ]}>
-          <Text style={{color: '#fff', fontSize: 14}}>开始下厨</Text>
+          <Text style={{color: '#fff', fontSize: fs(14)}}>开始下厨</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
   },
   count: {
-    fontSize: 24,
+    fontSize: fs(24),
     fontWeight: '500',
     marginHorizontal: 4,
   },
