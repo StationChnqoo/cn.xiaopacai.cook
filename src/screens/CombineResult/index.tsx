@@ -34,9 +34,11 @@ const CombineResult: React.FC<MyProps> = props => {
       />
       <View style={{height: 1, backgroundColor: '#eee'}} />
       <FlatList
+        bounces={false}
         data={receipts}
         extraData={collections}
         initialNumToRender={10}
+        keyExtractor={(item, index) => `${index}`}
         renderItem={info => (
           <CommonItem
             item={info.item}
@@ -52,6 +54,7 @@ const CombineResult: React.FC<MyProps> = props => {
           <View style={{height: 1, backgroundColor: '#eee'}} />
         )}
       />
+      <View style={{height: insets.bottom, backgroundColor: '#fff'}} />
     </View>
   );
 };

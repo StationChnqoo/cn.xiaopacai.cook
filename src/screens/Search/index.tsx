@@ -53,6 +53,8 @@ const Search: React.FC<MyProps> = props => {
         data={receipts}
         extraData={collections}
         initialNumToRender={10}
+        bounces={false}
+        keyExtractor={(item, index) => `${item?.name}-${index}`}
         renderItem={info => (
           <CommonItem
             item={info.item}

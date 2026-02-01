@@ -79,7 +79,7 @@ const Find: React.FC<MyProps> = ({navigation}) => {
           });
         }}>
         <Text
-          style={{color: theme, fontSize: fs(12)}}>{`${emoji} ${item.name}`}</Text>
+          style={{color: theme, fontSize: fs(14)}}>{`${emoji} ${item.name}`}</Text>
       </TouchableOpacity>
     );
   };
