@@ -1,7 +1,6 @@
-import Datas from '@src/assets/datas/receipts';
 import Flex from '@src/components/Flex';
 import {Receipt} from '@src/constants/t';
-import { fs } from '@src/constants/u';
+import {fs} from '@src/constants/u';
 import {useEmoji} from '@src/hooks/useEmoji';
 import {useBilibiliLink} from '@src/hooks/useLink';
 import {useCaches} from '@src/stores';
@@ -23,7 +22,7 @@ interface MyProps {
 
 const Find: React.FC<MyProps> = ({navigation}) => {
   const insets = useSafeAreaInsets();
-  const {theme, options, setOptions, collections, setCollections} = useCaches();
+  const {theme, options, setOptions, collections, setCollections, receipts} = useCaches();
   const [count, setCount] = useState(10);
   const [refreshing, setRefreshing] = useState(0);
   const [datas, setDatas] = useState<Receipt[]>([]);
@@ -31,11 +30,11 @@ const Find: React.FC<MyProps> = ({navigation}) => {
   useEffect(() => {
     let result = [];
     for (let i = 0; i < count; i++) {
-      let index = Math.floor(Math.random() * Datas.length);
-      result.push(Datas[index]);
+      let index = Math.floor(Math.random() * receipts.length);
+      result.push(receipts[index]);
     }
     setDatas(result);
-  }, [refreshing, count]);
+  }, [refreshing, count, receipts]);
 
   const onStep = (n: number) => {
     if (count + n <= 0) {
@@ -79,7 +78,10 @@ const Find: React.FC<MyProps> = ({navigation}) => {
           });
         }}>
         <Text
-          style={{color: theme, fontSize: fs(14)}}>{`${emoji} ${item.name}`}</Text>
+          style={{
+            color: theme,
+            fontSize: fs(14),
+          }}>{`${emoji} ${item.name}`}</Text>
       </TouchableOpacity>
     );
   };
@@ -125,7 +127,7 @@ const Find: React.FC<MyProps> = ({navigation}) => {
           <View style={{height: 10}} />
           <View style={styles.tags}>{datas.map(renderItem)}</View>
         </View>
-        <View style={{height: 10}} />
+        <View style={{height: 2}} />
         <View style={styles.group}>
           <Flex horizontal justify="space-between">
             <Text style={{fontSize: fs(16), fontWeight: '500', color: '#333'}}>
@@ -165,7 +167,7 @@ const styles = StyleSheet.create({
   },
   randomButton: {
     paddingHorizontal: 16,
-    paddingVertical: 5,
+    height: 32,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 5,

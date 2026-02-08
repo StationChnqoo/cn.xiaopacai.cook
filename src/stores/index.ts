@@ -28,6 +28,9 @@ interface States {
   setOptions: (options: SelectedOption) => void;
   collections: Receipt[];
   setCollections: (collections: Receipt[]) => void;
+  receipts: Receipt[];
+  setReceipts: (receipts: Receipt[]) => void;
+  fetchReceipts: () => Promise<void>;
 }
 
 const initialState = {
@@ -41,18 +44,31 @@ const initialState = {
     mode: -1,
   },
   collections: [],
+  receipts: [],
 };
+
+const RECEIPTS_URL = 'https://cdn.xiaopacai.cn/apps/cn.xiaopacai.icook/receipts.json';
 
 export const useCaches = create<States>()(
   devtools(
     persist(
-      set => ({
+      (set, get) => ({
         ...initialState,
         setToken: token => set({token}),
         setTheme: theme => set({theme}),
         setOptions: options => set({options}),
         setCollections: collections => set({collections}),
+        setReceipts: receipts => set({receipts}),
         reset: () => set({...initialState}),
+        fetchReceipts: async () => {
+          try {
+            const response = await fetch(RECEIPTS_URL);
+            const receipts: Receipt[] = await response.json();
+            set({receipts});
+          } catch (error) {
+            console.error('Failed to fetch receipts:', error);
+          }
+        },
       }),
       {
         storage: createJSONStorage(() => mmkvStorage),
@@ -61,6 +77,7 @@ export const useCaches = create<States>()(
         partialize: state => ({
           token: state.token,
           collections: state.collections,
+          receipts: state.receipts,
         }),
       },
     ),

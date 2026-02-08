@@ -21,14 +21,12 @@ const My: React.FC<MyProps> = ({navigation}) => {
     <View style={styles.view}>
       <View style={{height: insets.top, backgroundColor: '#fff'}} />
       <Profile onEdit={() => {}} />
-      <View style={{height: 10}} />
-      <TinyMenuItems onPress={id => {}} />
-      <View style={{height: 10}} />
+      <View style={{height: 2}} />
       <ThemeSetting />
       {/* <View style={{height: 1}} />
       <ResetSetting /> */}
       <ScrollView style={{flex: 1}} bounces={false}>
-        <View style={{height: 10}} />
+        <View style={{height: 2}} />
         {DropdownMenus.map((menu, index) => {
           return <DropableMenuItem item={menu} key={index} />;
         })}

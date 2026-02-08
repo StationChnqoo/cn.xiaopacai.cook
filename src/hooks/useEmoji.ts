@@ -1,12 +1,13 @@
 import {
   MeatOptions,
+  StapleOptions,
   ToolOptions,
   VegetableOptions,
 } from '@src/constants/options';
 import {Receipt} from '@src/constants/t';
 
 export const useEmoji = (data: Receipt) => {
-  let emojis = [...VegetableOptions, ...MeatOptions];
+  let emojis = [...VegetableOptions, ...MeatOptions, ...StapleOptions];
   let emoji = emojis
     .filter(it => data.stuff?.includes(it.name))
     .map(it => it.emoji)

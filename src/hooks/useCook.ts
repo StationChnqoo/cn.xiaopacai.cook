@@ -1,23 +1,21 @@
 import {Receipt} from '@src/constants/t';
 import {use, useEffect, useMemo, useRef, useState} from 'react';
-import Datas from '@src/assets/datas/receipts';
 import {useCaches} from '@src/stores';
 import _ from 'lodash';
-const datas: Receipt[] = _.clone(Datas);
 
 export const useCook = () => {
   const [receipts, setReceipts] = useState<Receipt[]>([]);
-  const {options} = useCaches();
+  const {options, receipts: allReceipts} = useCaches();
 
   // 基本条件过滤
   const filterBaseReceipts = useMemo(() => {
-    return datas
+    return allReceipts
       .filter(it => it.tools === options.tools)
       .filter(it => {
         if (options.staple.length === 0) return true;
         return options.staple.some(s => it.stuff.includes(s));
       });
-  }, [datas, options.tools, options.staple]);
+  }, [allReceipts, options.tools, options.staple]);
 
   const filterCooksWithLoose = () => {
     // 模糊匹配
@@ -62,7 +60,7 @@ export const useCook = () => {
     } else {
       setReceipts([]);
     }
-  }, [options]);
+  }, [options, allReceipts]);
 
   return {receipts};
 };

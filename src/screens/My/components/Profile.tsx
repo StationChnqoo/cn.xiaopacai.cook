@@ -2,7 +2,7 @@ import {useFocusEffect} from '@react-navigation/native';
 import {TinyMenuIds, TinyMenus} from '@src/assets/datas/menus';
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
-import { fs } from '@src/constants/u';
+import {fs} from '@src/constants/u';
 import {useCallback, useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -26,19 +26,12 @@ const Profile: React.FC<MyProps> = props => {
 
   return (
     <View style={styles.group}>
-      <Text style={{color: '#333', fontSize: fs(16), fontWeight: '500'}}>
-        {hello}
-      </Text>
-      <View style={{height: 5}} />
-      <Flex horizontal justify="space-between">
-        <Text style={{color: '#666', fontSize: fs(14)}}>用户123456</Text>
-        <Text
-          style={{color: theme, fontSize: fs(14)}}
-          onPress={() => {
-            onEdit();
-          }}>
-          编辑个人资料
-        </Text>
+      <Flex horizontal>
+        <Image
+          source={require('@src/assets/images/logo.png')}
+          style={{width: 196, height: 72}}
+          resizeMode="stretch"
+        />
       </Flex>
     </View>
   );

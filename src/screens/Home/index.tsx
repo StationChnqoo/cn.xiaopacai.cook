@@ -108,7 +108,7 @@ const Home: React.FC<MyProps> = ({navigation}) => {
             ))}
           </View>
         </View>
-        <View style={{height: 10}} />
+        <View style={{height: 2}} />
         <View style={styles.group}>
           <Text style={styles.title}>🍳 选一下厨具</Text>
           <View style={{height: 15}} />
@@ -127,7 +127,7 @@ const Home: React.FC<MyProps> = ({navigation}) => {
             ))}
           </View>
         </View>
-        <View style={{height: 10}} />
+        <View style={{height: 2}} />
         <View style={styles.group}>
           <Text style={styles.title}>🍲 来看看组合出的菜谱吧</Text>
           <View style={{height: 15}} />

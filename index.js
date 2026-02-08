@@ -13,12 +13,16 @@ import {name as appName} from './app.json';
 import Screens from './src/screens';
 // import {Envs} from './src/constants/env';
 import {nanoid} from 'nanoid/non-secure';
+import {useCaches} from './src/stores';
 
 dayjs.extend(relativeTime);
 dayjs.locale('zh-cn');
 
 const Cook = () => {
+  const fetchReceipts = useCaches(state => state.fetchReceipts);
+
   useEffect(() => {
+    fetchReceipts();
   }, []);
 
   useEffect(() => {
@@ -26,6 +30,7 @@ const Cook = () => {
       Reactotron.configure().useReactNative().use(reactotronRedux()).connect();
     }
   }, []);
+
   return (
     <QueryClientProvider client={new QueryClient({})}>
       <GestureHandlerRootView style={{flex: 1}}>

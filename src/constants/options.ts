@@ -65,6 +65,14 @@ export const VegetableOptions: Option[] = [
     name: '白菜',
     emoji: '🥬',
   },
+  {
+    name: '木耳',
+    emoji: '🍄',
+  },
+  {
+    name: '青椒',
+    emoji: '🌶️',
+  },
 ];
 
 /**

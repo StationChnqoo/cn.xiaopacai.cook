@@ -1,7 +1,7 @@
 import {TinyMenuIds, TinyMenus} from '@src/assets/datas/menus';
 import Flex from '@src/components/Flex';
 import {useCaches} from '@src/stores';
-import { fs } from '@src/constants/u';
+import {fs} from '@src/constants/u';
 import {useState} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   view: {},
   group: {
     paddingHorizontal: 15,
-    paddingVertical: 10,
+    paddingVertical: 15,
     backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'space-between',

@@ -1,5 +1,4 @@
 import {RouteProp} from '@react-navigation/native';
-import Datas from '@src/assets/datas/receipts';
 import CommonItem from '@src/components/CommonItem';
 import Flex from '@src/components/Flex';
 import {useBilibiliLink} from '@src/hooks/useLink';
@@ -19,13 +18,12 @@ interface MyProps {
 const Search: React.FC<MyProps> = props => {
   const {navigation, route} = props;
   const insets = useSafeAreaInsets();
-  const {theme, options, setOptions, collections, setCollections} = useCaches();
+  const {theme, options, setOptions, collections, setCollections, receipts: allReceipts} = useCaches();
   const [keywords, setKeywords] = useState('');
-  const datas = _.cloneDeep(Datas);
 
   const receipts = useMemo(() => {
-    return datas.filter(it => JSON.stringify(it).includes(keywords));
-  }, [keywords]);
+    return allReceipts.filter(it => JSON.stringify(it).includes(keywords));
+  }, [keywords, allReceipts]);
 
   return (
     <View style={styles.view}>
