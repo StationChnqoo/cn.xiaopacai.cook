@@ -6,7 +6,6 @@ import Home from '@src/screens/Home';
 import {useCaches} from '@src/stores';
 import React, {useCallback} from 'react';
 import {Image, StyleSheet, View} from 'react-native';
-import Find from '../Find';
 import Search from '../Search';
 import My from '../My';
 
@@ -31,12 +30,6 @@ const BottomTabs = (props: MyProps) => {
       component: Search,
       icon: require('./assets/menu_caipu.png'),
       label: '菜谱',
-    },
-    {
-      name: 'Bangbangtang',
-      component: Find,
-      icon: require('./assets/menu_bangbangtang.png'),
-      label: '发现',
     },
     {
       name: 'My',
